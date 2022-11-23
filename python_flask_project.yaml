@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: python-flask-project
+  name: python-flask-project
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: python-flask-project
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-flask-project
+    spec:
+      containers:
+      - image: docker.io/maroofatanweer/python-flask-docker:1
+        name: python-flask-project
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
